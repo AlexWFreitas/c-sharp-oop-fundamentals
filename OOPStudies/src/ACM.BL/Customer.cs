@@ -9,7 +9,7 @@ namespace ACM.BL
     public class Customer
     {
         #region Fields
-
+        
         private string _firstName;
         private string _lastName;
         private string _email;
@@ -17,8 +17,12 @@ namespace ACM.BL
 
         #endregion
 
+      
+
+
         #region Properties
 
+        public int CustomerId { get; private set; }
         public string HomeAddress { get; set; }
 
         public string FirstName 
@@ -43,6 +47,21 @@ namespace ACM.BL
                 _lastName = value;
             }
         }
+
+        public string FullName
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(FirstName) && string.IsNullOrWhiteSpace(LastName))
+                    return "";
+                if(string.IsNullOrWhiteSpace(LastName))
+                    return FirstName;
+                if (string.IsNullOrWhiteSpace(FirstName))
+                    return LastName;
+                return LastName + ", " + FirstName; 
+            }
+        }
+
 
         public string Email
         {
