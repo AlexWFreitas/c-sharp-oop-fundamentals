@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ACM.BL
 {
-    class Address
+    public class Address
     {
         #region Constructor
 

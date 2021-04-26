@@ -10,56 +10,27 @@ namespace ACM.BL
     {
         #region Constructor
 
-        public Customer()
+        public Customer() : this(0)
         {
+        }
+
+        public Customer(int customerId)
+        {
+            CustomerId = customerId;
+            AddressList = new List<Address>();
             Customer.InstanceCount++;
         }
 
-        public Customer(int customerId) : this()
-        {
-            CustomerId = customerId;
-        }
-
         #endregion
 
-        #region Fields
-
-        private string _firstName;
-        private string _lastName;
-        private string _emailAddress;
-        private string _workAddress;
-
-        #endregion
-
-        #region Properties
+        #region Properties and Fields
 
         public static int InstanceCount { get; set; }
-
         public int CustomerId { get; private set; }
-        public string HomeAddress { get; set; }
-
-        public string FirstName 
-        {   get
-            {
-                return _firstName;
-            }
-            set
-            {
-                _firstName = value;
-            } 
-        }
-
-        public string LastName
-        {
-            get
-            {
-                return _lastName;
-            }
-            set
-            {
-                _lastName = value;
-            }
-        }
+        public string EmailAddress { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public List<Address> AddressList { get; set; }
 
         public string FullName
         {
@@ -72,31 +43,6 @@ namespace ACM.BL
                 if (string.IsNullOrWhiteSpace(FirstName))
                     return LastName;
                 return LastName + ", " + FirstName; 
-            }
-        }
-
-
-        public string EmailAddress
-        {
-            get
-            {
-                return _emailAddress;
-            }
-            set
-            {
-                _emailAddress = value;
-            }
-        }
-
-        public string WorkAddress
-        {
-            get
-            {
-                return _workAddress;
-            }
-            set
-            {
-                _workAddress = value;
             }
         }
 
