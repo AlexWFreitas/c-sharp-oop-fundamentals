@@ -8,19 +8,32 @@ namespace ACM.BL
 {
     public class Customer
     {
+        #region Constructor
+
+        public Customer()
+        {
+            Customer.InstanceCount++;
+        }
+
+        public Customer(int customerId) : this()
+        {
+            CustomerId = customerId;
+        }
+
+        #endregion
+
         #region Fields
-        
+
         private string _firstName;
         private string _lastName;
-        private string _email;
+        private string _emailAddress;
         private string _workAddress;
 
         #endregion
 
-      
-
-
         #region Properties
+
+        public static int InstanceCount { get; set; }
 
         public int CustomerId { get; private set; }
         public string HomeAddress { get; set; }
@@ -63,15 +76,15 @@ namespace ACM.BL
         }
 
 
-        public string Email
+        public string EmailAddress
         {
             get
             {
-                return _email;
+                return _emailAddress;
             }
             set
             {
-                _email = value;
+                _emailAddress = value;
             }
         }
 
@@ -87,6 +100,24 @@ namespace ACM.BL
             }
         }
 
-        #endregion 
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// Validates the customer data.
+        /// </summary>
+        /// <returns></returns>
+        public bool Validate()
+        {
+            var isValid = true;
+
+            if (string.IsNullOrWhiteSpace(LastName)) isValid = false;
+            if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
+
+            return isValid;
+        }
+
+        #endregion
     }
 }

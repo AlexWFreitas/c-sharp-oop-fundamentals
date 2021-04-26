@@ -78,5 +78,83 @@ namespace ACM.BLTest
             //-- Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void StaticCountTest()
+        {
+            // Arrange
+            var beforeCount = Customer.InstanceCount;
+
+            var c1 = new Customer();
+            c1.FirstName = "Bilbo";
+
+
+            var c2 = new Customer();
+            c2.FirstName = "Frodo";
+
+
+            var c3 = new Customer();
+            c3.FirstName = "Rosie";
+
+            // Act
+
+            // Assert
+            Assert.AreEqual(beforeCount + 3, Customer.InstanceCount);
+        }
+
+        [TestMethod]
+        public void ValidateValid()
+        {
+            // Arrange
+            var customer = new Customer
+            {
+                LastName = "Baggins",
+                EmailAddress = "fbaggings@hobbiton.me"
+            };
+
+            var expected = true;
+
+            // Act
+            var actual = customer.Validate();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ValidateMissingLastName()
+        {
+            // Arrange
+            var customer = new Customer
+            {
+                EmailAddress = "fbaggings@hobbiton.me"
+            };
+
+            var expected = false;
+
+            // Act
+            var actual = customer.Validate();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ValidateMissingEmailAddress()
+        {
+            // Arrange
+            var customer = new Customer
+            {
+                LastName = "Baggins",
+            };
+
+            var expected = false;
+
+            // Act
+            var actual = customer.Validate();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
