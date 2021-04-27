@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ACM.BL
 {
-    public class OrderItem
+    public class OrderItem : EntityBase
     {
         #region Constructors
 
@@ -22,7 +22,7 @@ namespace ACM.BL
 
         #region Methods
 
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 

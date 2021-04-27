@@ -60,9 +60,27 @@ namespace ACM.BL
 
         public bool Save(Address address)
         {
-            // Code for saving
+            var success = true;
 
-            return true;
+            if (address.HasChanges)
+            {
+                if (address.IsValid)
+                {
+                    if (address.IsNew)
+                    {
+                        // Call an Insert Stored Procedure
+                    }
+                    else
+                    {
+                        // Call an Update Stored Procedures
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
     }
 }

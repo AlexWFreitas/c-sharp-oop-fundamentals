@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace ACM.BL
 {
-    public class Order
+    public class Order : EntityBase
     {
         #region Constructors
 
@@ -24,7 +24,7 @@ namespace ACM.BL
 
         #region Methods
 
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 

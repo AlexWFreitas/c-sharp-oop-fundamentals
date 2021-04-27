@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ACM.BL
 {
-    public class Address
+    public class Address : EntityBase
     {
         #region Constructor
 
@@ -35,7 +35,7 @@ namespace ACM.BL
 
         #region Methods
 
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
