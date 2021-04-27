@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace ACM.BL
 {
@@ -8,14 +9,15 @@ namespace ACM.BL
     {
         #region Constructors
 
-        public Order()
+        public Order() : this(0)
         {
-            Order.InstanceCount++;
         }
 
         public Order(int orderId)
         {
             OrderId = orderId;
+            OrderItems = new List<OrderItem>();
+            Order.InstanceCount++;
         }
 
         #endregion
@@ -33,20 +35,12 @@ namespace ACM.BL
 
         #endregion
 
-        #region Field
+        #region Properties and Fields
 
-        #endregion
-
-        #region Properties
-
+        public int CustomerId { get; set; }
+        public int ShippingAddressId { get; set; }
         public int OrderId { get; private set; }
-
-        public Customer Customer { get; set; }
-
         public DateTimeOffset? OrderDate { get; set; }
-
-        public string ShippingAddress { get; set; }
-
         public List<OrderItem> OrderItems { get; set; }
 
         static int InstanceCount { get; set; }
