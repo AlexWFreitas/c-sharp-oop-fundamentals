@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Acme.Common\Acme.Common.csproj" />
+    <ProjectReference Include="..\src\ACM.BL\ACM.BL.csproj" />
   </ItemGroup>
 
 </Project>

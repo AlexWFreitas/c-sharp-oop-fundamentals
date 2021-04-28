@@ -1,5 +1,5 @@
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Acme.Common;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Acme.Common;
 
 namespace Acme.CommonTest
 {

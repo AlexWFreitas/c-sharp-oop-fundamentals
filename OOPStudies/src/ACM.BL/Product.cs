@@ -2,7 +2,7 @@
 
 namespace ACM.BL
 {
-    public class Product : EntityBase
+    public class Product : EntityBase, ILoggable
     {
         #region Constructors
 
