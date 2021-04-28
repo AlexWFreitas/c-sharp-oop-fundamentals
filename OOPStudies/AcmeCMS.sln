@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACM.BL", "src\ACM.BL\ACM.BL.csproj", "{DD755CEC-4A2C-4075-964D-60A1FE7CE2C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACM.BL", "src\ACM.BL\ACM.BL.csproj", "{DD755CEC-4A2C-4075-964D-60A1FE7CE2C5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C27E29C3-6A63-41D5-83DD-F6C4D9192BB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACM.BLTest", "test\ACM.BLTest\ACM.BLTest.csproj", "{FC08FF1D-605A-4EAE-8EB9-0B8B586FDA5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACM.BLTest", "test\ACM.BLTest\ACM.BLTest.csproj", "{FC08FF1D-605A-4EAE-8EB9-0B8B586FDA5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.Common", "Acme.Common\Acme.Common.csproj", "{ABDA021C-508B-488D-B48A-C69764456A34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.CommonTest", "Acme.CommonTest\Acme.CommonTest.csproj", "{8E484A14-90D2-4AFD-BC19-E1D7BB8051ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +27,21 @@ Global
 		{FC08FF1D-605A-4EAE-8EB9-0B8B586FDA5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC08FF1D-605A-4EAE-8EB9-0B8B586FDA5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC08FF1D-605A-4EAE-8EB9-0B8B586FDA5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABDA021C-508B-488D-B48A-C69764456A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABDA021C-508B-488D-B48A-C69764456A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABDA021C-508B-488D-B48A-C69764456A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABDA021C-508B-488D-B48A-C69764456A34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E484A14-90D2-4AFD-BC19-E1D7BB8051ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E484A14-90D2-4AFD-BC19-E1D7BB8051ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E484A14-90D2-4AFD-BC19-E1D7BB8051ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E484A14-90D2-4AFD-BC19-E1D7BB8051ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FC08FF1D-605A-4EAE-8EB9-0B8B586FDA5C} = {C27E29C3-6A63-41D5-83DD-F6C4D9192BB8}
+		{8E484A14-90D2-4AFD-BC19-E1D7BB8051ED} = {C27E29C3-6A63-41D5-83DD-F6C4D9192BB8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF2D1860-4447-4CB9-8845-250BF7A102B1}

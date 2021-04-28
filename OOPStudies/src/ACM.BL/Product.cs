@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Acme.Common;
 
 namespace ACM.BL
 {
@@ -32,22 +30,9 @@ namespace ACM.BL
             return isValid;
         }
 
-        public Product Retrieve(int productId)
-        {
-            // Code
-            return new Product();
-        }
-
-        public bool Save()
-        {
-            var isSaved = true;
-            
-            // Code
-
-            return isSaved;
-        }
-
         public override string ToString() => ProductName;
+
+        public string Log() => $"{ProductId}: {ProductName} Detail: {ProductDescription} Status: {EntityState.ToString()}";
 
         #endregion
 
@@ -55,11 +40,25 @@ namespace ACM.BL
 
         public int ProductId { get; private set; }
 
-        public string ProductName { get; set; }
+        public string ProductName 
+        { 
+            get
+            {
+                return _productName.InsertSpaces();
+            }
+
+            set
+            {
+                _productName = value;
+            }
+        }
+
+        private string _productName;
 
         public string ProductDescription { get; set; }
 
         public decimal? CurrentPrice { get; set; }
+
 
         static int InstanceCount { get; set; }
 

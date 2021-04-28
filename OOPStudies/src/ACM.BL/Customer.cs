@@ -67,6 +67,8 @@ namespace ACM.BL
 
         public override string ToString() => FullName;
 
+        public string Log() => $"{CustomerId}: {FullName} Email: {EmailAddress} Status: {EntityState.ToString()}";
+
         #endregion
     }
 }
